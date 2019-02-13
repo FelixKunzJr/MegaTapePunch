@@ -1,7 +1,7 @@
 # MegaTapePunch
 Get your paper tape machine running with an Arduino.
 
-This Project was made for the Enter Museum in Solothurn.
+This Project was made for the [Enter Museum](www.enter.ch) in Solothurn.
 
 You have 3 diffrent modes:
 
