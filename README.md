@@ -3,18 +3,18 @@ Get your paper tape machine running with an Arduino Mega.
 
 This Project was made for the [Enter Museum](www.enter.ch) in Solothurn.
 
-You have 3 diffrent modes:
+You have 3 different modes:
 
 1. Original Terminal Mode
 2. Graphical Terminal Mode
 3. Graphical Print Mode
 
 
-The Original Terminal Mode is used to Print the input with ascii code. It translates the input to binary and prints them. This is the function, which was used when these machines were first used. 
+The Original Terminal Mode is used to Print the input with ASCII code. It translates the input to binary and prints them. This is the function, which was used when these machines were first used. 
 
-The Graphical Terminal Mode is a modern approach to make the text visible with punchholes. It takes the text input, and converts each character to a graphical charachter on the tape instead of simple binary code. 
+The Graphical Terminal Mode is a modern approach to make the text visible with punch holes. It takes the text input and converts each character to a graphical character on the tape instead of simple binary code. 
 
-The Graphical Print Mode is used to Print out a predetermined text with the push of a button.  This mode doesnt need the input form an external computer. You can just push a button and it will print. 
+The Graphical Print Mode is used to Print out a predetermined text with the push of a button.  This mode doesn't need the input from an external computer. You can just push a button and it will print. 
 
 ## Connect Arduino to punch tape Machine.
 
@@ -38,7 +38,7 @@ This is the way i connected the FACIT 4070:
 | 12         | PR     | 35           |
 
 
-Ch 1-8 are the data lines. SD is stepper direction and defines direction of the tape. If its set to high, the machine will pull the tape back in. For our purpose we can pull SD to GND. PI is Print instruction and is used to print. After the Ch lines are set, the PI will be high for 10ms and go back low. After the prit instruction is sent, the FACIT 4070 will print the holes and send the PR signal. PR is Print ready and is sent by the tape punch machine after it has punched its holes and is ready to get new instructions. 
+Ch 1-8 are the data lines. SD is stepper direction and defines the direction of the tape. If its set to high, the machine will pull the tape back in. For our purpose, we can pull SD to GND. PI is Print instruction and is used to print. After the Ch lines are set, the PI will be high for 10ms and go back low. After the print instruction is sent, the FACIT 4070 will print the holes and send the PR signal. PR is Print ready and is sent by the tape punch machine after it has punched its holes and is ready to get new instructions. 
 
 
 
@@ -57,7 +57,7 @@ To Select which mode you want to use, you have to set the jumpers.
 
 
 You can select the mode you want to use, by pulling the pin low (to GND). This can be done with dip switches or hardwired with jumper cables. The pins are internally connected to a pullup (20k).
-Please make shure only one pin is activated at a time.
+Please make sure only one pin is activated at a time.
 
 
 
@@ -65,10 +65,10 @@ Please make shure only one pin is activated at a time.
 
 ## Connect Arduino to PC (Input for mode 1/2)
 
-For both of the terminal you can use the Serial monitor built in the Arduino IDE to send input data. It is also possible to use the Terminal on linux/mac with the command "screen <port_name> <baud_rate>". Baud_rate is set to 9600 in this case. On windows Putty is the easiest software to connect via Serial Terminal.
+For both of the terminal, you can use the Serial monitor built in the Arduino IDE to send input data. It is also possible to use the Terminal on Linux/Mac with the command "screen <port_name> <baud_rate>". Baud_rate is set to 9600 in this case. On Windows, Putty is the easiest software to connect via Serial Terminal.
 
 
 ## Connect Button (mode 3)
-To print text in mode 3, you need to connect a pushbutton to pin 52. The Button should be connectet to ground to pull the pin 52 low once pressed. 
+To print text in mode 3, you need to connect a pushbutton to pin 52. The Button should be connected to ground to pull the pin 52 low once pressed. 
 
-On line 90 (or somewhere in the ButtonMode() function) in the code you can set your prefered string which will be printed.
+On line 90 (or somewhere in the ButtonMode() function) in the code, you can set your preferred string which will be printed.
