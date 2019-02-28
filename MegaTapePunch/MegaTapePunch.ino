@@ -85,7 +85,7 @@ int ButtonMode() {
   char st[] = "HELLO ENTER";          //String which is to be Printed
 
   int lx = sizeof(st) - 1;
-Serial.println(lx);
+//Serial.println(lx);
 
 
   for (int x = 0; x < lx; x++) {
@@ -94,6 +94,7 @@ Serial.println(lx);
 
 
   }
+  skip();
 
 
   resetFunc();    //Reset after each finished Action to prevent Bugs
