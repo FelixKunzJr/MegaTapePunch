@@ -36,6 +36,7 @@ This is the way i connected the FACIT 4070:
 | 10         | SD     | GND          |
 | 11         | PI     | 36           |
 | 12         | PR     | 35           |
+| 19         | EXT    | 300Ω to GND  |
 
 
 Ch 1-8 are the data lines. SD is stepper direction and defines the direction of the tape. If its set to high, the machine will pull the tape back in. For our purpose, we can pull SD to GND. PI is Print instruction and is used to print. After the Ch lines are set, the PI will be high for 10ms and go back low. After the print instruction is sent, the FACIT 4070 will print the holes and send the PR signal. PR is Print ready and is sent by the tape punch machine after it has punched its holes and is ready to get new instructions. 
